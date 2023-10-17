@@ -1,73 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        body {
+    
+  <title>ALTOS Technologies</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<style>
+    body {
   font-family: sans-serif;
 }
 
 header {
-  background-color: #000;
-  color: #fff;
+  background-color:rgb(15, 15, 36)
 }
 
-h1 {
-  font-size: 3rem;
-  margin-top: 0;
-}
-
-nav {
-  float: right;
-}
-
-nav a {
-  padding: 1rem;
-  color: #fff;
-  text-decoration: none;
-}
-
-nav a:hover {
-  background-color: #333;
-}
-
-main {
-  padding: 1rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-footer {
-  background-color: #ccc;
-  color: #000;
-  padding: 1rem;
-}
-
-    </style>
-  <title>ALTOS Theme Hub</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+</style>
 <body>
   <header>
-    <h1>ALTOS Theme Hub</h1>
-    <img src="https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg?auto=compress&cs=tinysrgb&w=600" alt="ALTOS Theme Hub">
-
+    <h1>ALTOS Technologies</h1>
     <nav>
       <a href="#">Services</a>
-      <a href="#">Categeory</a>
-      <a href="#">Plan Pricing</a>
+      <a href="#">Products</a>
       <a href="#">About</a>
       <a href="#">Contact</a>
     </nav>
   </header>
   <main>
-    <h2>Discover the Perfect Theme for your Website</h2>
-    <p>Find the ideal theme for your website, tailored to perfection and ready to impress.</p>
-    <img src="https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg?auto=compress&cs=tinysrgb&w=600" alt="ALTOS Theme Hub">
-</main>
+    <section id="hero">
+      <div class="container">
+        <h2>ALTOS Technologies</h2>
+        <p>We are a leading provider of technology solutions for businesses of all sizes. We offer a wide range of services, including software development, web development, and IT consulting.</p>
+        <a href="#">Learn More</a>
+      </div>
+    </section>
+    <section id="services">
+      <div class="container">
+        <h2>Our Services</h2>
+        <div class="grid">
+          <div class="item">
+            <h3>Software Development</h3>
+            <p>We develop custom software solutions to meet the specific needs of our clients. We specialize in developing web applications, mobile applications, and desktop applications.</p>
+          </div>
+          <div class="item">
+            <h3>Web Development</h3>
+            <p>We design and develop professional websites that are both visually appealing and user-friendly. We also offer a variety of web development services, such as SEO, social media integration, and e-commerce.</p>
+          </div>
+          <div class="item">
+            <h3>IT Consulting</h3>
+            <p>We provide IT consulting services to help businesses of all sizes improve their IT infrastructure and processes. We can help you choose the right hardware and software for your needs, and we can also help you implement and manage your IT systems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="products">
+      <div class="container">
+        <h2>Our Products</h2>
+        <div class="grid">
+          <div class="item">
+            <h3>ERP Software</h3>
+            <p>Our ERP software is a comprehensive solution that helps businesses manage all aspects of their operations, including finance, accounting, manufacturing, and inventory.</p>
+          </div>
+          <div class="item">
+            <h3>CRM Software</h3>
+            <p>Our CRM software helps businesses manage their customer relationships. It provides tools for tracking customer interactions, managing leads, and closing deals.</p>
+          </div>
+          <div class="item">
+            <h3>Website Builder</h3>
+            <p>Our website builder is an easy-to-use tool that allows anyone to create a professional website without any coding knowledge.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>ALTOS Technologies was founded in 2010 by a group of experienced IT professionals. We are passionate about helping businesses of all sizes succeed. We believe that technology can play a vital role in helping businesses grow and thrive.</p>
+        <a href="#">Learn More</a>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form action="#">
+          <input type="text" placeholder="Name">
+          <input type="email" placeholder="Email">
+          <textarea placeholder="Message"></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
   <footer>
-    <p>Copyright &copy; 2023 ALTOS Theme Hub</p>
+    <p>Copyright &copy; 2023 ALTOS Technologies</p>
   </footer>
 </body>
 </html>
