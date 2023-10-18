@@ -1,0 +1,13 @@
+/* Theme 1: Update the color scheme */
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+  color: #0a0909; /* Text color */
+  background-image: url("https://media.tenor.com/Lz6FeRjiPtMAAAAM/merrychristmas-snow.gif"); /* Background image URL for the first theme */
+ 
+}
+
+
+/* Add more styles for Theme 1 here */
+
+/* Customize your theme as needed */
+

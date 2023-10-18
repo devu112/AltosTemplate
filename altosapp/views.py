@@ -3,17 +3,23 @@ from .models import UserProfile
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.urls import reverse
 # Create your views here.
 
 
 
-def home(request):
+def index(request):
     
-    return render(request, 'home.html')
+    return render(request, 'index.html')
 
 def base(request):
     
     return render(request, 'base.html')
+def home(request):
+    
+    return render(request, 'home.html')
+
+
 
 def aha(request):
     
@@ -39,13 +45,22 @@ def adminlog(request):
         else:
             messages.error(request, "Invalid username or password")
             return redirect('/')
-    return render(request, 'home.html')
+    return render(request, 'index.html')
+
+# def update_theme(request):
+#     user_id = request.POST['user_id']
+#     theme = request.POST['theme']
+
+#     user_profile, created = UserProfile.objects.get_or_create(user_id=user_id)
+#     user_profile.selected_theme = theme
+#     user_profile.save()
+
+#     return redirect('home')
 
 def update_theme(request):
     if request.method == 'POST':
-        theme = request.POST.get('theme', 'default')  # Get the selected theme from the form
-        user_profile = UserProfile.objects.get(user=request.user)
-        user_profile.selected_theme = theme  # Update the selected theme for the user
-        user_profile.save()
-    return redirect('adminhome')  # Redirect back to the adminhome page
+        theme = request.POST.get('theme', 'default')
+        request.session['selected_theme'] = theme
+        return redirect('index')  # Redirect to the home page after theme selection
+
 

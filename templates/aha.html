@@ -1,99 +1,142 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    
-  <title>ALTOS Technologies</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-</head>
-<style>
-    body {
-  font-family: sans-serif;
-}
+  <style>
+  
+  /* Style for the Contact section */
+  #contact {
+    background-color: #f4f4f4;
+    padding: 80px 0;
+  }
 
-header {
-  background-color:rgb(15, 15, 36)
+  #contact h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  /* Style for the login form */
+  .form-container {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-container h1 {
+    font-size: 24px;
+  }
+
+  .form-group {
+    margin-top: 20px;
+  }
+
+  .form-group label {
+    font-weight: bold;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .signup-link {
+    margin-top: 20px;
+  }
+
+  .signup-link a {
+    text-decoration: none;
+    color: #007bff;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .form-container {
+      padding: 10px;
+    }
+
+    .btn-primary {
+      margin-top: 10px;
+    }
+  }
+  .w3-bar .w3-button {
+  padding: 16px;
 }
 
 </style>
+
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <img src="{% static 'favicon.ico' %}" class="logo__img" alt="logo"></i> ALTOS-Technologies
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> SERVICES</a>
+      <a href="{% url 'aha' %}" class="w3-bar-item w3-button"><i class="fa fa-th"></i> LOGIN</a>
+      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+</head>
 <body>
-  <header>
-    <h1>ALTOS Technologies</h1>
-    <nav>
-      <a href="#">Services</a>
-      <a href="#">Products</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <section id="hero">
-      <div class="container">
-        <h2>ALTOS Technologies</h2>
-        <p>We are a leading provider of technology solutions for businesses of all sizes. We offer a wide range of services, including software development, web development, and IT consulting.</p>
-        <a href="#">Learn More</a>
-      </div>
-    </section>
-    <section id="services">
-      <div class="container">
-        <h2>Our Services</h2>
-        <div class="grid">
-          <div class="item">
-            <h3>Software Development</h3>
-            <p>We develop custom software solutions to meet the specific needs of our clients. We specialize in developing web applications, mobile applications, and desktop applications.</p>
-          </div>
-          <div class="item">
-            <h3>Web Development</h3>
-            <p>We design and develop professional websites that are both visually appealing and user-friendly. We also offer a variety of web development services, such as SEO, social media integration, and e-commerce.</p>
-          </div>
-          <div class="item">
-            <h3>IT Consulting</h3>
-            <p>We provide IT consulting services to help businesses of all sizes improve their IT infrastructure and processes. We can help you choose the right hardware and software for your needs, and we can also help you implement and manage your IT systems.</p>
+  <section id="contact">
+    <h2 class="text-center">Contact</h2>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="form-container">
+            <h1 class="text-center">LOG IN</h1>
+            {% for m in messages %}
+            {{ m }}
+            {% endfor %}
+            <form action="{% url 'adminlog' %}" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="student-name">Username</label>
+                <input type="text" class="form-control" name="name" id="student-name" placeholder="Enter your username">
+              </div>
+              <div class="form-group">
+                <label for="student-address">Password</label>
+                <input type="password" class="form-control" name="psw" id="student-address" placeholder="Enter your password">
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
+            <div class="signup-link text-center">
+              <a href="{% url 'home' %}">Don't have an account?</a>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-    <section id="products">
-      <div class="container">
-        <h2>Our Products</h2>
-        <div class="grid">
-          <div class="item">
-            <h3>ERP Software</h3>
-            <p>Our ERP software is a comprehensive solution that helps businesses manage all aspects of their operations, including finance, accounting, manufacturing, and inventory.</p>
-          </div>
-          <div class="item">
-            <h3>CRM Software</h3>
-            <p>Our CRM software helps businesses manage their customer relationships. It provides tools for tracking customer interactions, managing leads, and closing deals.</p>
-          </div>
-          <div class="item">
-            <h3>Website Builder</h3>
-            <p>Our website builder is an easy-to-use tool that allows anyone to create a professional website without any coding knowledge.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <div class="container">
-        <h2>About Us</h2>
-        <p>ALTOS Technologies was founded in 2010 by a group of experienced IT professionals. We are passionate about helping businesses of all sizes succeed. We believe that technology can play a vital role in helping businesses grow and thrive.</p>
-        <a href="#">Learn More</a>
-      </div>
-    </section>
-    <section id="contact">
-      <div class="container">
-        <h2>Contact Us</h2>
-        <form action="#">
-          <input type="text" placeholder="Name">
-          <input type="email" placeholder="Email">
-          <textarea placeholder="Message"></textarea>
-          <button type="submit">Send</button>
-        </form>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p>Copyright &copy; 2023 ALTOS Technologies</p>
-  </footer>
+    </div>
+  </section>
+  
+  
 </body>
 </html>
