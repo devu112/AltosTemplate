@@ -1,13 +1,35 @@
-/* Theme 1: Update the color scheme */
-body, h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
-  color: #0a0909; /* Text color */
-  background-image: url("https://media.tenor.com/Lz6FeRjiPtMAAAAM/merrychristmas-snow.gif"); /* Background image URL for the first theme */
- 
+/* Christmas colors and background */
+body {
+  background-color: #cc0000;
 }
 
+/* Add snowflakes animation */
+@keyframes snow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
 
-/* Add more styles for Theme 1 here */
+/* Styling for snowflakes */
+.snowflake {
+  position: absolute;
+  color: #fff;
+  font-size: 20px;
+  animation: snow 1s infinite;
+}
 
-/* Customize your theme as needed */
+/* Add a ribbon effect */
+.ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #ffcc00;
+  z-index: 999;
+}
 
+/* Any other Christmas-themed styling you want */

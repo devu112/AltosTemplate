@@ -9,8 +9,18 @@ from django.urls import reverse
 
 
 def index(request):
+    selected_theme = request.session.get('selected_theme', 'default')
+
+    # Render the corresponding theme template
+    if selected_theme == "christmas":
+        return render(request, "christmas.html")
+    elif selected_theme == "onam":
+        return render(request, "onam_theme.html")
+    else:
+        # Fallback to a default theme if no theme is selected
+       
     
-    return render(request, 'index.html')
+     return render(request, 'index.html')
 
 def base(request):
     
@@ -47,20 +57,25 @@ def adminlog(request):
             return redirect('/')
     return render(request, 'index.html')
 
+
+
 # def update_theme(request):
-#     user_id = request.POST['user_id']
-#     theme = request.POST['theme']
-
-#     user_profile, created = UserProfile.objects.get_or_create(user_id=user_id)
-#     user_profile.selected_theme = theme
-#     user_profile.save()
-
-#     return redirect('home')
+#     if request.method == 'POST':
+#         theme = request.POST.get('theme', 'default')
+#         request.session['selected_theme'] = theme
+#         return redirect('index')  # Redirect to the home page after theme selection
 
 def update_theme(request):
     if request.method == 'POST':
         theme = request.POST.get('theme', 'default')
         request.session['selected_theme'] = theme
+
+        # Assuming 'index' is the view for rendering the main page
+        # You may need to replace this with the actual view name you use for your home page
         return redirect('index')  # Redirect to the home page after theme selection
 
 
+
+def christmas(request):
+    
+    return render(request, 'christmas.html')
