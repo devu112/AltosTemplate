@@ -1,35 +1,17 @@
-/* Christmas colors and background */
-body {
-  background-color: #cc0000;
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
 }
-
-/* Add snowflakes animation */
-@keyframes snow {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(5px);
-  }
+body, html {
+  height: 100%;
+  line-height: 1.8;
 }
-
-/* Styling for snowflakes */
-.snowflake {
-  position: absolute;
-  color: #fff;
-  font-size: 20px;
-  animation: snow 1s infinite;
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/w3images/mac.jpg");
+  min-height: 100%;
 }
-
-/* Add a ribbon effect */
-.ribbon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
-  background-color: #ffcc00;
-  z-index: 999;
+.w3-bar .w3-button {
+  padding: 16px;
 }
-
-/* Any other Christmas-themed styling you want */
