@@ -5,17 +5,7 @@
 <title>Altos Tech</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<!-- <link rel="stylesheet" type="text/css" href="styles.css">
-{% if request.session.selected_theme == 'christmas' %}
- <link rel="stylesheet" href="{% static 'assets/css/christmas.css' %}">
-{% elif request.session.selected_theme == 'onam' %}
- <link rel="stylesheet" href="{% static 'assets/css/onam.css' %}">
-{% else %} -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<!-- {% endif %} -->
-
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -26,7 +16,7 @@
     height: 100%;
     line-height: 1.8;
   }
-  /* Full height image header */
+  /* Add a responsive background image */
   .bgimg-1 {
     background-position: center;
     background-size: cover;
@@ -35,43 +25,6 @@
   }
   .w3-bar .w3-button {
     padding: 16px;
-  }
-  /* Keyframes for shaking animation */
-  @keyframes shake {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-5px); }
-    40% { transform: translateX(5px); }
-    60% { transform: translateX(-5px); }
-    80% { transform: translateX(5px); }
-    100% { transform: translateX(0); }
-  }
-  /* Apply the shaking animation to the specific elements (span tags) */
-  .w3-jumbo, .w3-xxlarge {
-    animation: shake 0.5s ease-in-out infinite;
-  }
-  @keyframes jump {
-    0% {
-      transform: translateY(0);
-    }
-    20% {
-      transform: translateY(-5px);
-    }
-    40% {
-      transform: translateY(0);
-    }
-    60% {
-      transform: translateY(-5px);
-    }
-    80% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  /* Apply the jump animation to the specific element */
-  #jumping-text {
-    animation: jump 1.5s ease-in-out infinite;
   }
   /* Add CSS rules for responsiveness */
   @media (max-width: 768px) {
@@ -85,98 +38,80 @@
     .bgimg-1 {
       background-image: url("responsive-image.jpg");
     }
-  }
-  @media (max-width: 600px) {
     .w3-jumbo {
       font-size: 32px;
     }
     .w3-xxlarge {
       font-size: 20px;
     }
+    /* Additional responsive styles can be added here */
   }
 </style>
 </head>
 <body>
-  
-
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <!-- <img src="{% static 'favicon.ico' %}"  class="logo__img" alt="logo"></i>  -->
-    <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> SERVICES</a>
-      <a href="{% url 'aha' %}" class="w3-bar-item w3-button"><i class="fa fa-th"></i>LOGIN</a>
-      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
-      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
-    </div>
-    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-</div>
-
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">SERVICES</a>
-  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
-</nav>
-
-<!-- Header with full-height image -->
-<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-  <img src="https://media.istockphoto.com/id/1363105003/photo/diverse-modern-office-successful-motivated-black-businesswoman-leads-meeting-talks-of-company.jpg?s=1024x1024&w=is&k=20&c=OH-K0woH2Qxztq2KXTb25_IhFPipbUbJZDop_QwOpQ0=" alt="" width="100%">
-  <div class="w3-display-left w3-text-white" style="padding: 48px">
-  <span class="w3-jumbo w3-hide-small" id="jumping-text" style="color: rgb(73, 0, 0);">ALTOS TECHNOLOGIES</span><br>
-  <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
-  <span class="w3-large" style="color: rgb(178, 186, 148);">Stop wasting valuable time with projects that just isn't you.</span>
-  <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>
-</div>
-
-  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div>
-</header>
-
-<!-- About Section -->
-<div class="w3-container" style="padding:128px 16px" id="about">
-  <h3 class="w3-center">ABOUT THE COMPANY</h3>
-  <p class="w3-center w3-large">Key features of our company</p>
-  <div class="w3-row-padding w3-center" style="margin-top:64px">
-    <div class="w3-quarter">
-      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
-      <p class="w3-large">Responsive</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Passion</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Design</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Support</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+      <!-- Right-sided navbar links -->
+      <div class="w3-right w3-hide-small">
+        <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+        <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> SERVICES</a>
+        <a href="{% url 'aha' %}" class="w3-bar-item w3-button"><i class="fa fa-th"></i>LOGIN</a>
+        <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
+        <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+      </div>
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
     </div>
   </div>
-</div>
+  <!-- Header with full-height image -->
+  <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+    <img src="https://media.istockphoto.com/id/1363105003/photo/diverse-modern-office-successful-motivated-black-businesswoman-leads-meeting-talks-of-company.jpg?s=1024x1024&w=is&k=20&c=OH-K0woH2Qxztq2KXTb25_IhFPipbUbJZDop_QwOpQ0=" alt="" width="100%">
+    <div class="w3-display-left w3-text-white" style="padding: 48px">
+      <span class="w3-jumbo w3-hide-small" style="color: rgb(73, 0, 0);">ALTOS TECHNOLOGIES</span><br>
+      <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
+      <span class="w3-large" style="color: rgb(178, 186, 148);">Stop wasting valuable time with projects that just aren't you.</span>
+      <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>
+    </div>
+    <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding: 24px 48px">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+  </header>
 
+  <!-- About Section -->
+  <div class="w3-container" style="padding: 128px 16px" id="about">
+    <h3 class="w3-center">ABOUT THE COMPANY</h3>
+    <p class="w3-center w3-large">Key features of our company</p>
+    <div class="w3-row-padding" style="margin-top: 64px">
+      <div class="w3-quarter">
+        <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+        <p class="w3-large">Responsive</p>
+        <p>We understand the importance of a responsive website. Our designs are fully responsive, ensuring your website looks and functions beautifully on any device.</p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-heart w3-margin-bottom w3-jumbo w3-center"></i>
+        <p class="w3-large">Passion</p>
+        <p>We're passionate about crafting elegant and effective websites. Our team will work closely with you to bring your vision to life.</p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-diamond w3-margin-bottom w3-jumbo w3-center"></i>
+        <p class="w3-large">Quality</p>
+        <p>We believe in delivering quality. Our websites are designed with attention to detail, ensuring the highest level of quality and performance.</p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-cog w3-margin-bottom w3-jumbo w3-center"></i>
+        <p class="w3-large">Options</p>
+        <p>We provide a wide range of options. Our services include web design, development, e-commerce, SEO, and more. We've got you covered.</p>
+      </div>
+    </div>
+  </div>
 <!-- Promo Section - "We know design" -->
 <div class="w3-container w3-light-grey" style="padding:128px 16px">
   <div class="w3-row-padding">

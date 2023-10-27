@@ -11,4 +11,5 @@ urlpatterns = [
     path('adminhome', views.adminhome, name='adminhome'),
     path('update_theme', views.update_theme, name='update_theme'),
     path('christmas', views.christmas, name='christmas'),
+    path('onam',views.onam,name='onam'),
 ]

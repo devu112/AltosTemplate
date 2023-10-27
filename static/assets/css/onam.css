@@ -3,9 +3,18 @@
 /* Theme 2: Update the color scheme */
 body, h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
-  color: #fff; /* Text color */
-  background-image: url(https://media1.giphy.com/media/c6UOuzCPmQq7mJTpWW/200.webp?cid=ecf05e47fh1vbp3z6ljj08tjfc4drfo1w6y1rsojq7ctpt77&ep=v1_gifs_search&rid=200.webp&ct=g);
 }
-
-
-
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/w3images/mac.jpg");
+  min-height: 100%;
+}
+.w3-bar .w3-button {
+  padding: 16px;
+}

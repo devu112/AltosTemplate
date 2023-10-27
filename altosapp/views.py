@@ -15,9 +15,9 @@ def index(request):
     if selected_theme == "christmas":
         return render(request, "christmas.html")
     elif selected_theme == "onam":
-        return render(request, "onam_theme.html")
+        return render(request, "onam.html")
     else:
-        # Fallback to a default theme if no theme is selected
+       
        
     
      return render(request, 'index.html')
@@ -29,7 +29,9 @@ def home(request):
     
     return render(request, 'home.html')
 
-
+def onam(request):
+    
+    return render(request, 'onam.html')
 
 def aha(request):
     
@@ -59,23 +61,15 @@ def adminlog(request):
 
 
 
-# def update_theme(request):
-#     if request.method == 'POST':
-#         theme = request.POST.get('theme', 'default')
-#         request.session['selected_theme'] = theme
-#         return redirect('index')  # Redirect to the home page after theme selection
+
 
 def update_theme(request):
     if request.method == 'POST':
         theme = request.POST.get('theme', 'default')
         request.session['selected_theme'] = theme
-
-        # Assuming 'index' is the view for rendering the main page
-        # You may need to replace this with the actual view name you use for your home page
-        return redirect('index')  # Redirect to the home page after theme selection
+        return redirect('index')  
 
 
 
 def christmas(request):
-    
     return render(request, 'christmas.html')
