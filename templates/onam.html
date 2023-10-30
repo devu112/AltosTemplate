@@ -12,9 +12,13 @@
   body, h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway", sans-serif;
   }
+  
+
   body, html {
     height: 100%;
     line-height: 1.8;
+    background-image: url("{% static 'maveli.gif' %}");
+   
   }
   /* Add a responsive background image */
   .bgimg-1 {
@@ -49,9 +53,13 @@
 </style>
 </head>
 <body>
+    
+   
+
   <!-- Navbar (sit on top) -->
   <div class="w3-top">
     <div class="w3-bar w3-white w3-card" id="myNavbar">
+        
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
         <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
@@ -63,6 +71,8 @@
       <!-- Hide right-floated links on small screens and replace them with a menu icon -->
       <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
         <i class="fa fa-bars"></i>
+        <img class="w3-image w3-round-large" src="{% static 'maveli (1).gif' %}" alt="" height="100" width="100">
+      
       </a>
     </div>
   </div>
@@ -86,8 +96,10 @@
   </header>
 
   <!-- About Section -->
+
   <div class="w3-container" style="padding: 128px 16px" id="about">
     <h3 class="w3-center">ABOUT THE COMPANY</h3>
+    <img class="w3-image w3-round-large" src="{% static 'maveli (1).gif' %}" alt="">
     <p class="w3-center w3-large">Key features of our company</p>
     <div class="w3-row-padding" style="margin-top: 64px">
       <div class="w3-quarter">
@@ -133,7 +145,7 @@
   <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src=https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"" alt="John" style="width:100%">
+        <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="John" style="width:100%">
         <div class="w3-container">
           <h3>SEO Optimization</h3>
           <p class="w3-opacity">Digital Marketing</p>

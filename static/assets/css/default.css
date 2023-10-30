@@ -1,10 +1,10 @@
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
 body, html {
   height: 100%;
   line-height: 1.8;
 }
-
 /* Full height image header */
 .bgimg-1 {
   background-position: center;
@@ -12,11 +12,9 @@ body, html {
   background-image: url("/w3images/mac.jpg");
   min-height: 100%;
 }
-
 .w3-bar .w3-button {
   padding: 16px;
 }
-
 /* Keyframes for shaking animation */
 @keyframes shake {
   0% { transform: translateX(0); }
@@ -26,7 +24,6 @@ body, html {
   80% { transform: translateX(5px); }
   100% { transform: translateX(0); }
 }
-
 /* Apply the shaking animation to the specific elements (span tags) */
 .w3-jumbo, .w3-xxlarge {
   animation: shake 0.5s ease-in-out infinite;
@@ -51,8 +48,30 @@ body, html {
     transform: translateY(0);
   }
 }
-
 /* Apply the jump animation to the specific element */
 #jumping-text {
   animation: jump 1.5s ease-in-out infinite;
+}
+/* Add CSS rules for responsiveness */
+@media (max-width: 768px) {
+  .w3-bar .w3-button {
+    display: none;
+  }
+  .w3-bar .w3-right {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .w3-jumbo {
+    font-size: 32px;
+  }
+  .w3-xxlarge {
+    font-size: 20px;
+  }
+}
+
+/* Make the navbar visible when inspected */
+.w3-bar {
+  display: block !important;
 }

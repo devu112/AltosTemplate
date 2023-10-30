@@ -19,23 +19,84 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-  body, h1, h2, h3, h4, h5, h6 {
-    font-family: "Raleway", sans-serif;
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/w3images/mac.jpg");
+  min-height: 100%;
+}
+.w3-bar .w3-button {
+  padding: 16px;
+}
+/* Keyframes for shaking animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+/* Apply the shaking animation to the specific elements (span tags) */
+.w3-jumbo, .w3-xxlarge {
+  animation: shake 0.5s ease-in-out infinite;
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0);
   }
-  body, html {
-    height: 100%;
-    line-height: 1.8;
+  20% {
+    transform: translateY(-5px);
   }
-  /* Full height image header */
-  .bgimg-1 {
-    background-position: center;
-    background-size: cover;
-    background-image: url("/w3images/mac.jpg");
-    min-height: 100%;
+  40% {
+    transform: translateY(0);
   }
+  60% {
+    transform: translateY(-5px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* Apply the jump animation to the specific element */
+#jumping-text {
+  animation: jump 1.5s ease-in-out infinite;
+}
+/* Add CSS rules for responsiveness */
+@media (max-width: 768px) {
   .w3-bar .w3-button {
-    padding: 16px;
+    display: none;
   }
+  .w3-bar .w3-right {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .w3-jumbo {
+    font-size: 32px;
+  }
+  .w3-xxlarge {
+    font-size: 20px;
+  }
+}
+
+/* Make the navbar visible when inspected */
+.w3-bar {
+  display: block !important;
+}
+
   /* Keyframes for shaking animation */
   @keyframes shake {
     0% { transform: translateX(0); }
@@ -94,41 +155,55 @@
       font-size: 20px;
     }
   }
+  @media (max-width: 768px) {
+  .w3-bar .w3-button {
+    display: none;
+  }
+  .w3-bar .w3-right {
+    width: 100%;
+    text-align: center;
+  }
+}
 </style>
 </head>
 <body>
   
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <!-- <img src="{% static 'favicon.ico' %}"  class="logo__img" alt="logo"></i>  -->
-    <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> SERVICES</a>
-      <a href="{% url 'aha' %}" class="w3-bar-item w3-button"><i class="fa fa-th"></i>LOGIN</a>
-      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
-      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+   <!-- Navbar (sit on top) -->
+   <div class="w3-top">
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+        <!-- Logo and title -->
+        <div class="w3-left">
+            <!-- Place your logo or brand title here -->
+            <a href="#home"  class="w3-bar-item w3-button"><i class="fa fa-home"></i> Logo</a>
+        </div>
+        <!-- Menu icon for smaller screens -->
+        <div class="w3-right w3-hide-large w3-hide-medium">
+            <a href="javascript:void(0)" class="w3-bar-item w3-button" onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <!-- Navigation links -->
+        <div class="w3-right w3-hide-small">
+            <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+            <a href="#services" class="w3-bar-item w3-button">SERVICES</a>
+            <a href="#pricing" class="w3-bar-item w3-button">PRICING</a>
+            <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
+        </div>
     </div>
-    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
 </div>
 
 <!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">SERVICES</a>
-  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large"
+    style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()"
+        class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    <a href="" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="" onclick="w3_close()" class="w3-bar-item w3-button">SERVICES</a>
+    <a href="" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+    <a href="" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+    <a href="" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
 </nav>
-
 <!-- Header with full-height image -->
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
   <img src="https://media.istockphoto.com/id/1363105003/photo/diverse-modern-office-successful-motivated-black-businesswoman-leads-meeting-talks-of-company.jpg?s=1024x1024&w=is&k=20&c=OH-K0woH2Qxztq2KXTb25_IhFPipbUbJZDop_QwOpQ0=" alt="" width="100%">
@@ -198,7 +273,7 @@
   <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src=https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"" alt="John" style="width:100%">
+        <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="John" style="width:100%">
         <div class="w3-container">
           <h3>SEO Optimization</h3>
           <p class="w3-opacity">Digital Marketing</p>
@@ -274,13 +349,13 @@
       <img src="https://media.istockphoto.com/id/1332176260/photo/man-working-at-a-creative-office-using-his-computer-and-people-moving-at-the-background.webp?b=1&s=170667a&w=0&k=20&c=rtKCb7Aeihyoc4RpoC4PfiyUtDhX4vSJ8td3xG-9otc=" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A microphone">
     </div>
     <div class="w3-col l3 m6">
-      <img src="" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
+      <img src="https://media.istockphoto.com/id/1332176260/photo/man-working-at-a-creative-office-using-his-computer-and-people-moving-at-the-background.webp?b=1&s=170667a&w=0&k=20&c=rtKCb7Aeihyoc4RpoC4PfiyUtDhX4vSJ8td3xG-9otc=" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
     </div>
     <div class="w3-col l3 m6">
-      <img src="" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A drone">
+      <img src="https://media.istockphoto.com/id/1332176260/photo/man-working-at-a-creative-office-using-his-computer-and-people-moving-at-the-background.webp?b=1&s=170667a&w=0&k=20&c=rtKCb7Aeihyoc4RpoC4PfiyUtDhX4vSJ8td3xG-9otc=" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A drone">
     </div>
     <div class="w3-col l3 m6">
-      <img src="" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Soundbox">
+      <img src="https://media.istockphoto.com/id/1332176260/photo/man-working-at-a-creative-office-using-his-computer-and-people-moving-at-the-background.webp?b=1&s=170667a&w=0&k=20&c=rtKCb7Aeihyoc4RpoC4PfiyUtDhX4vSJ8td3xG-9otc=" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Soundbox">
     </div>
   </div>
 
@@ -377,7 +452,7 @@
       <ul class="w3-ul w3-white w3-hover-shadow">
         <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
         <li class="w3-padding-16"><b>50GB</b> Storage</li>
-        <li class="w3-padding-16"><b>50</b> Emails</li>
+        <li class="w3-padding-16"><b>50</b> Emails </li>
         <li class="w3-padding-16"><b>50</b> Domains</li>
         <li class="w3-padding-16"><b>Endless</b> Support</li>
         <li class="w3-padding-16">
@@ -413,7 +488,7 @@
       </p>
     </form>
     <!-- Image of location/map -->
-    <img src="/w3images/map.jpg" class="w3-image w3-greyscale" style="width:100%;margin-top:48px">
+    <img src="" class="w3-image w3-greyscale" style="width:100%;margin-top:48px">
   </div>
 </div>
 
@@ -428,7 +503,7 @@
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <p>Powered by <a href="" title="W3.CSS" target="_blank" class="w3-hover-text-green">Altos</a></p>
 </footer>
  
 <script>
@@ -439,24 +514,25 @@ function onClick(element) {
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
-
-
-// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
-
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-  } else {
-    mySidebar.style.display = 'block';
-  }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-}
 </script>
+
+
+<script>
+        // Toggle between showing and hiding the sidebar when clicking the menu icon
+        function w3_open() {
+            var mySidebar = document.getElementById("mySidebar");
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+            } else {
+                mySidebar.style.display = 'block';
+            }
+        }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
